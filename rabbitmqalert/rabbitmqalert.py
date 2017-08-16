@@ -1,4 +1,4 @@
-#! /usr/bin/python2
+#! /usr/bin/python
 # -*- coding: utf-8 -*-
 
 import urllib2
@@ -90,7 +90,7 @@ class RabbitMQAlert:
                 server = smtplib.SMTP_SSL(options["email_server"], 465)
 
             if "email_password" in options and options["email_password"]:
-                server.login(options["email_from"], options["email_password"])
+                server.login(options['email_user'], options["email_password"])
 
             recipients = options["email_to"]
             # add subject as header before message text
